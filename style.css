@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-image: url("./img/bg.jpg");
+	background-color: grey;
+    background-size: cover;
+    cursor: url(./img/rocket36.png),auto;
+	touch-action:none;
+}
+h1,h2,h3{
+    color: white;
+    text-align:center;
+    text-transform:uppercase;
+}
+game{
+    display:block;
+    margin:2em auto;
+    background: rgba(255, 255, 255, 0.4);
+    width:400px;
+    height:400px;
+    position:relative;
+    border-radius:10px;
+    overflow:hidden;
+    border: 2px solid white;
+    box-shadow: 0px 0px 20px white;
+    cursor: url(./img/rocket36.png),auto;
+    animation: loop_color1 2s infinite;
+}
+pit{
+    display:block;
+    background:transparent;
+    width:100px;
+    height:100px;
+    position:absolute;
+    left:0px;
+    top:0px;
+}
+
+/*  แก้เฉพาะด้านล่างเอง */
+
+pit[y="1"]{
+    top:100px;
+}
+pit[y="2"]{
+    top:200px;
+}
+pit[y="3"]{
+    top:300px;
+}
+pit[x="1"]{
+    left:100px;
+}
+pit[x="2"]{
+    left:200px;
+}
+pit[x="3"]{
+    left:300px;
+}
+
+pit[status="mole1"]{
+    background-image: url(./img/monster1.gif);
+    background-size: cover;
+}
+pit[status="mole2"]{
+    background-image: url(./img/monster2.gif);
+    background-size: cover;
+}
+pit[status="die"]{
+    background-image: url(./img/explosion.gif);
+    background-size: cover;
+}
+pit[status="miss"]{
+    background-image: url(./img/world.gif);
+    background-size: cover;
+}
+
+#Gamename {
+    font-size: 2.5em;
+    text-shadow: 0px 0px 30px;
+    animation: loop_color 1.5s infinite;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+}
+
+/* ทำ loop_color ของชื่อเกม */
+@keyframes loop_color {
+    0% {color: #da0f7a;}
+    25% {color: #f0077c;}
+    50% {color: #ff217c;}
+    75% {color: #fe5e78;}
+    100% {color: #fda384;}
+}
+
+#timeleft {
+    text-shadow: 0px 0px 30px #ff217c;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #ff217c;
+}
+
+#theScore, #Score {
+    text-shadow: 0px 0px 30px #0cffe1;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #0cffe1;
+}
+
+#subTitle {
+    text-shadow: 0px 0px 30px #fda384;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #fda384;
+    text-decoration: underline;
+}
+
+/* ทำ loop_color ของกรอบเกม */
+@keyframes loop_color1 {
+    from {
+        border: 2px solid #00dfd4;
+        box-shadow: 0px 0px 20px #0cffe1;
+    }
+    to {
+        border: 2px solid #ff217c;
+        box-shadow: 0px 0px 20px #ff217c;
+    }
+}
+
+/* unvisited link */
+a:link {
+    color: #ff217c;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: white;
+}
+
+/* visited link */
+a:visited {
+    color: #ff217c;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: white;
+}
+
+/* mouse over link */
+a:hover {
+    color: #08c9c9;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: white;
+}
+
+/* selected link */
+a:active {
+    color: #2ae3d6;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: white;
+}
+
+pit:hover{
+    background-color: #fff4;
+}

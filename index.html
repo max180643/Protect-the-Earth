@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Unit 5 - A1 - 61070040
+	</title>
+	<meta charset=utf-8>
+	<!-- Add Favicon -->
+	<link rel="icon" href="./img/favicon.png" type="image/png" sizes="16x16">
+	<!-- Link External CSS -->
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+	<!-- แก้ไขชื่อเกม และ เพิ่ม style -->
+	<h1 id="Gamename" onclick="playbgm()">Protect the Earth!</h1>
+	<h3 id="subTitle" onclick="ready(), playbgm()">Click Here to Play !</h3>
+
+	<!-- นับคะแนน -->
+	<h2 id="Score">score: <span id="theScore">0</span></h2>
+
+	<!-- 
+		กล่องตารางเกม
+		สถานะของตุ่นที่จะอยู่ใน pit ได้แก่
+		1.blank (ไม่มีตุ่น) 2.mole (มีตุ่น) 3.die (ตีโดน) 4.miss (ตีผิด)
+	-->
+	<game>
+		<pit x="0" y="0" status="blank" onclick="hit(this)"></pit>
+		<pit x="1" y="0" status="blank" onclick="hit(this)"></pit>
+		<pit x="2" y="0" status="blank" onclick="hit(this)"></pit>
+		<pit x="3" y="0" status="blank" onclick="hit(this)"></pit>
+		<pit x="0" y="1" status="blank" onclick="hit(this)"></pit>
+		<pit x="1" y="1" status="blank" onclick="hit(this)"></pit>
+		<pit x="2" y="1" status="blank" onclick="hit(this)"></pit>
+		<pit x="3" y="1" status="blank" onclick="hit(this)"></pit>
+		<pit x="0" y="2" status="blank" onclick="hit(this)"></pit>
+		<pit x="1" y="2" status="blank" onclick="hit(this)"></pit>
+		<pit x="2" y="2" status="blank" onclick="hit(this)"></pit>
+		<pit x="3" y="2" status="blank" onclick="hit(this)"></pit>
+		<pit x="0" y="3" status="blank" onclick="hit(this)"></pit>
+		<pit x="1" y="3" status="blank" onclick="hit(this)"></pit>
+		<pit x="2" y="3" status="blank" onclick="hit(this)"></pit>
+		<pit x="3" y="3" status="blank" onclick="hit(this)"></pit>
+	</game>
+	
+	<!-- ตัวนับถอยหลัง -->
+	<h2 id="timeleft">time left : <span id="theTime">30</span> </h2>
+
+	<!-- sound -->
+	<audio id="bgm" preload="auto" loop>
+	<source src="./sound/bgm.mp3" type="audio/mp3">
+	</audio>
+	<audio id="beep" preload="auto">
+	<source src="./sound/beep.wav" type="audio/wav">
+	</audio>
+	<audio id="miss" preload="auto">
+	<source src="./sound/miss.wav" type="audio/wav">
+	</audio>
+	<audio id="hit" preload="auto">
+	<source src="./sound/hit.wav" type="audio/wav">
+	</audio>
+	<audio id="spawn" preload="auto">
+	<source src="./sound/spawn.mp3" type="audio/mp3">
+	</audio>
+
+	<!-- Link External Javascript -->
+	<script type="text/javascript" src="script.js"></script>
+
+
+</body>
+</html> 
